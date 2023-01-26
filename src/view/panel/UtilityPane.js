@@ -24,7 +24,7 @@ export default class UtilityPane extends React.Component {
 		} else {
 
 			return (
-				<div className="pane" id={this.props.id} style={{width: this.props.width , height: this.props.height}}>
+				<div className="pane" id={this.props.id} style={{width: this.props.width , height: this.props.height , ...this.props}}>
 					<div className="pane-title">
 						{this.props.title}
 					</div>

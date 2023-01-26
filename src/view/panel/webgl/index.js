@@ -10,6 +10,8 @@ import {
 	MeshNormalMaterial
 } from 'three';
 
+import Memory from './../../../memory/Globals.js';
+
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
@@ -198,6 +200,9 @@ export default class WebGLContainer extends React.Component {
 					});
 					window.dispatchEvent(ev);
 
+					Memory.store('current-mesh' , skinnedMesh.parent);
+
+
 					//rerender scene
 					renderer.render(scene , camera);
 					controls.update();
@@ -215,7 +220,7 @@ export default class WebGLContainer extends React.Component {
 		this.state.renderer.render(this.state.scene , this.state.camera);
 		let { width , height , scene } = this.state;
 		scene.background = new Color(0x000000);
-		this.state.renderer.setSize(width , height);
+		this.state.renderer.setSize(width , height - 40);
 
 		if ( this.fpsCounter ) {
 			this.fpsCounter.textContent = this.state.framesPerSecond;
