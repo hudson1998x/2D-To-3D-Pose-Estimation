@@ -153,7 +153,7 @@ export default class WebGLContainer extends React.Component {
 		scene.add(grid);
 
 		//pass the size to the renderer
-		renderer.setSize(width , height);
+		renderer.setSize(width , height - 40);
 
 		//for anything listening to the state
 		this.setState({

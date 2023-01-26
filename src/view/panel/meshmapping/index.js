@@ -70,7 +70,6 @@ export default class MeshMapping extends Pane {
 				depth.forEach((item) => out.push(item));
 			}
 		});
-		console.log(out);
 		return out;
 	}
 	tableRow(point){
@@ -78,10 +77,19 @@ export default class MeshMapping extends Pane {
 			<tr>
 				<td>{point.part}</td>
 				<td>
-					<NiceSelect defaultText={(<span><i className="fas fa-bone"></i>&nbsp;&nbsp;&nbsp;None</span>)} options={this.getBonesAsOptions()} onChange={(boneName) => { this.state.bones[boneName] = point.part; }} />
+					<NiceSelect defaultText={(<span><i className="fas fa-bone"></i>&nbsp;&nbsp;&nbsp;None</span>)} options={this.getBonesAsOptions()} onChange={(item) => { this.setBone(point , item); }} />
 				</td>
 			</tr>
 		)
+	}
+	setBone(part , bone){
+		console.log(part , bone);
+
+		this.state.binds[part.part] = bone.value;
+
+		this.setState({
+			updated: Date.now()
+		});
 	}
 	createBonesUI(){
 		return (
