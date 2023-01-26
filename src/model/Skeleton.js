@@ -1,3 +1,6 @@
+import Estimation from './estimation-projection/index.d.ts';
+
+import Memory from './../memory/Globals.js';
 /**
 * @description - This class handles all the information
 *              - about the estimated pose.
@@ -88,6 +91,13 @@ export default class Skeleton {
 				this.context.stroke();
 			});
 		}
+	}
+	estimate(){
+		let estimator = new Estimation();
+		estimator.setKeypoints(this.pose);
+		estimator.setMesh(Memory.retrieve('current-mesh'));
+
+		estimator.estimate();
 	}
 	getPosePoint(keyName){
 		for(let i = 0;i < this.pose.length;i++){

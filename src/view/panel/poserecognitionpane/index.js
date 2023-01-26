@@ -108,7 +108,7 @@ export default class PoseRecognitionPane extends PaneComponent {
 				skel.setContext(this.canvascontext());
 
 				skel.drawToCanvas();
-
+				skel.estimate();
 				
 				
 			})
