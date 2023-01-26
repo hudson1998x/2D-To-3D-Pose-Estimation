@@ -4,3 +4,34 @@
 	background:#050505;
 	border-bottom:1px solid #333;
 }
+.logo{
+	color:#fff;
+	display: inline-block;
+	line-height: 40px;
+	text-indent:15px;
+	font-weight: lighter;
+	font-size:13px;
+}
+.logo .color-alt{
+	color:#33b5e5;
+}
+.altmenu button{
+	height:40px;
+	width:40px;
+	margin-left: 10px;
+	color:#fff;
+	background: transparent;
+	outline: 0px;
+	border:0px;
+	cursor:pointer;
+}
+.right-message{
+	position:absolute;top:5px;right:5px;height:30px;
+	width:fit-content;
+	padding-left:20px;
+	padding-right:20px;
+	background: #33b5e5;
+	border-radius:8px;
+	line-height:30px;
+	font-size:11px;
+}
