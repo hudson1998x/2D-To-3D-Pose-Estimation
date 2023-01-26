@@ -1,0 +1,51 @@
+.hierarchy{
+	height:100%;
+}
+.filter{
+	position:absolute;top:0px;left:0px;right:0px;height:50px;
+	border-bottom:1px solid #333;
+	border-top:1px solid #333;
+}
+.filter input{
+	width:100%;
+	height:50px;
+	background: transparent;
+	color:#fff;
+	border:0px;
+	text-indent:20px;
+	outline:0px;
+}
+.inner-hierarchy{
+	position: absolute;
+	top:51px;left:0px;right:0px;bottom:40px;overflow:hidden;
+	color:#fff;
+	font-family: system-ui;
+	font-weight: lighter;
+	font-size:13px;
+}
+.inner-hierarchy .item{
+	position: relative;
+	height: fit-content;
+	line-height:40px;
+	text-indent:15px;
+	border-bottom:1px solid #000;
+	cursor: pointer;
+}
+.item .children{
+	position:relative;top:0px;
+	left:10px;
+}
+.item:hover > .children{
+	display:block;
+}
+.item .children > .item{
+	height:fit-content;
+}
+.hide-scroll{
+	position:absolute;top:0px;left:0px;width:calc(100% + 19px);height:calc(100% + 19px);
+	overflow:scroll;
+}
+.item .label:hover{
+	background:#33b5e5;
+	color:#000;
+}

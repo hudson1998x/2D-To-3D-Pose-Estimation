@@ -1,0 +1,16 @@
+.pane-title{
+	height:40px;
+	line-height: 40px;
+	background: #181818;
+	color:#fff;
+	font-family: system-ui;
+	font-weight: lighter;
+	font-size:13px;
+	text-indent:15px;
+	position: relative;
+}
+.pane-content{
+	position: relative;
+	height:100%;
+	overflow: hidden;
+}

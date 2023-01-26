@@ -1,0 +1,17 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css);
+.App {
+  position: absolute;
+  top:0px;
+  left:0px;
+  right:0px;
+  bottom:0px;
+  background:#222;
+}
+.pane{
+    background: #111;
+    border:1px solid #333;
+    position: relative;
+}
+body{
+	overflow:hidden;
+}

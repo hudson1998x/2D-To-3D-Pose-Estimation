@@ -1,0 +1,6 @@
+.altmenu{
+	position: absolute;
+	top:0px;left:0px;right:0px;height:40px;
+	background:#050505;
+	border-bottom:1px solid #333;
+}
