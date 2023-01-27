@@ -148,7 +148,7 @@ export default class MediaPanel extends ComponentPane{
 				<div onDragOver={this.dragOver} onDrop={this.dragEnd} className="media-list">
 					<label>Issues ({this.state.errorFiles.length})</label>
 					{this.state.errorFiles.map((item) => this.getErrorItem(item))}
-					<label>Images ({this.state.images.length})</label>
+					<label>Images ({this.state.images.length}) <button><i className="fas fa-plus"></i></button></label>
 					{this.state.images.map((item) => this.getImageMediaItem(item))}
 					<label>Videos ({this.state.videos.length})</label>
 					{this.state.videos.map((item) => this.getVideoMediaItem(item))}

@@ -27,8 +27,6 @@ export default class FileUploadPlaceholder extends React.Component {
 	dragEnd(ev){
 		ev.nativeEvent.preventDefault();
 		ev.nativeEvent.stopPropagation();
-		
-		console.log(ev.dataTransfer.files);
 
 		if ( this.props.onFilesAdded ) {
 			this.props.onFilesAdded(ev.dataTransfer.files);

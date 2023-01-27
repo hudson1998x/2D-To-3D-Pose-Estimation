@@ -32,6 +32,7 @@ export default class Vector3Range{
 	private rangeZMax:number = 0;
 
 	/**
+	* @type Radian
 	* @param {number} min - minimum X value
 	* @param {number} max - maximum X value
 	*/
@@ -41,6 +42,7 @@ export default class Vector3Range{
 		return this;
 	}
 	/**
+	* @type Radian
 	* @param {number} min - minimum Y value
 	* @param {number} max - maximum Y value
 	*/
@@ -50,6 +52,7 @@ export default class Vector3Range{
 		return this;
 	}
 	/**
+	* @type Radian
 	* @param {number} min - minimum Z value
 	* @param {number} max - maximum Z value
 	*/

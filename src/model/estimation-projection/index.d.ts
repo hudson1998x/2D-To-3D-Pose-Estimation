@@ -1,3 +1,5 @@
+import Skeleton from './model/skeleton.d.ts';
+
 /**
 * @description - Added in TypeScript to prove competence in TypeScript
 */
@@ -40,7 +42,10 @@ export default class Projection {
 	}
 	//TODO: Build Estimation model to map 2d coordinates to 3d.
 	public estimate() : Projection {
-		
+		let skel = new Skeleton();
+
+		console.log(skel);
+
 		return this;
 	}
 }

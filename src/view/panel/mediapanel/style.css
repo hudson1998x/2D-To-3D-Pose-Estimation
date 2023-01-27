@@ -8,6 +8,20 @@
 	display: block;
 	font-size:13px;
 	text-indent:15px;
+	position:relative;
+}
+.media-list label button{
+	position: absolute;
+	top:0px;right:0px;width:40px;height:40px;
+	background: transparent;
+	cursor: pointer;
+	border:0px;
+	color:#aaa;
+	transition:color 0.2s linear;
+}
+.media-list label button:hover{
+	color:#fff;
+	text-shadow:0px 0px 10px #fff;
 }
 .media-list .loading-item{
 	height:60px;
