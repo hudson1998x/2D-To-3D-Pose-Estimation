@@ -1,5 +1,7 @@
 import Skeleton from './model/skeleton.d.ts';
 
+import Memory from './../../memory/Globals.js';
+
 /**
 * @description - Added in TypeScript to prove competence in TypeScript
 */
@@ -42,9 +44,15 @@ export default class Projection {
 	}
 	//TODO: Build Estimation model to map 2d coordinates to 3d.
 	public estimate() : Projection {
-		let skel = new Skeleton();
+		let skel = new Skeleton(this.keypoints);
+		Memory.store('skeleton' , skel);
+		skel.setMesh(this.mesh);
+		skel.setMapping(Memory.retrieve('binds'));
+		skel.estimate();
 
 		console.log(skel);
+
+
 
 		return this;
 	}

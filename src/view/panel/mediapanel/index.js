@@ -138,7 +138,6 @@ export default class MediaPanel extends ComponentPane{
 	}
 
 	content(){
-		console.log(this.state);
 		if ( (this.state.images.length < 1 && this.state.videos.length < 1) || this.state.isDragOver ) {
 			return (
 				<FileUploadPlaceholder onFilesAdded={this.processFiles}/>

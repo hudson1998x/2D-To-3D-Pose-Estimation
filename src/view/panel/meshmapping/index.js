@@ -38,10 +38,8 @@ export default class MeshMapping extends Pane {
 	}
 	getBonesAsOptions(){
 		if ( !Memory.retrieve('current-mesh') ) {
-			console.log("No Mesh");
 			return [];
 		} else {
-			console.log("Building array");
 			let children = this.convertTo2D(Memory.retrieve('current-mesh'));
 			let out = [];
 
@@ -83,9 +81,15 @@ export default class MeshMapping extends Pane {
 		)
 	}
 	setBone(part , bone){
-		console.log(part , bone);
 
 		this.state.binds[part.part] = bone.value;
+
+		Memory.store('binds' , this.state.binds);
+		// console.log(Memory.retrieve('skeleton'));
+		Memory.retrieve('skeleton').setMapping(this.state.binds);
+		Memory.retrieve('skeleton').estimate();
+
+		console.log(Memory.retrieve('skeleton'));
 
 		this.setState({
 			updated: Date.now()

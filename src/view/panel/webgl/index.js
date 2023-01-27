@@ -117,8 +117,8 @@ export default class WebGLContainer extends React.Component {
 		//this will fire every time the next
 		//rendering frame is ready
 		let anim = () => {
-			this.updateGl();
 			requestAnimationFrame(anim);
+			this.updateGl();
 			fpsCounter++;
 		};
 		
@@ -169,14 +169,17 @@ export default class WebGLContainer extends React.Component {
 		//force initial render
 		renderer.render(scene , camera);
 
-		if ( this.props.mesh ) {
+		Memory.store('forceUpdate' , () => {
+			renderer.render(scene , camera);
+		});
+
+		if ( this.props.mesh && scene.children.length < 4 ) {
 			let loader = new GLTFLoader();
 			loader.load(
 				this.props.mesh , 
 				//onLoad
 				(gltf) => {
 					//add the whole scene to the existing one
-					scene.add(gltf.scene);
 
 					// we didnt try grabbing the mesh first as its
 					// generated as its requested (i.e by adding to scene)
@@ -200,8 +203,12 @@ export default class WebGLContainer extends React.Component {
 					});
 					window.dispatchEvent(ev);
 
-					Memory.store('current-mesh' , skinnedMesh.parent);
+					Memory.store('current-mesh' , gltf.scene);
 
+					Memory.store('scene' , scene);
+
+
+					scene.add(Memory.retrieve('current-mesh'));
 
 					//rerender scene
 					renderer.render(scene , camera);

@@ -10,7 +10,6 @@ export default class MeshHierarchy extends ComponentPane {
 		}
 		window.addEventListener('mesh-changed' , ({ detail }) => {
 			let { mesh } = detail;
-			console.log(mesh);
 			let assign = {
 				mesh: mesh , 
 				loaded: false
